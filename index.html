@@ -9,8 +9,8 @@
   *{margin:0;padding:0;box-sizing:border-box}
   :root{--lime:#C8F135;--black:#0D0D0D;--dark:#111;--card:#1A1A1A;--border:#2A2A2A;--white:#F0F0F0;--muted:#555}
   body{background:var(--black);font-family:'Barlow',sans-serif;color:var(--white);min-height:100vh;padding:0 0 48px;max-width:640px;margin:0 auto}
-  .topbar{background:var(--dark);border-bottom:3px solid var(--lime);padding:16px 20px;display:flex;align-items:center;gap:10px;margin-bottom:0}
-  .logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-style:italic;font-size:1.5rem;color:var(--lime);text-transform:uppercase}
+  .topbar{background:var(--dark);border-bottom:3px solid var(--lime);padding:14px 20px;display:flex;align-items:center;gap:10px;margin-bottom:0}
+  .logoimg{height:38px;width:auto;display:block}
   .ctitle{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
   .strip{background:var(--lime);padding:9px 20px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-style:italic;font-size:0.8rem;letter-spacing:2px;color:var(--black);text-align:center;text-transform:uppercase;margin-bottom:20px}
   .w{padding:0 18px}
@@ -49,21 +49,11 @@
   .cn{width:26px;height:26px;border-radius:5px;background:var(--lime);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:0.75rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .nc{color:var(--muted);font-size:0.82rem}
   .foot{text-align:center;font-size:0.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
-  .lico{width:32px;height:32px}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <svg class="lico" viewBox="0 0 36 36" fill="none">
-    <circle cx="18" cy="18" r="17" stroke="#C8F135" stroke-width="2"/>
-    <circle cx="18" cy="18" r="11" fill="#C8F135" opacity=".12"/>
-    <line x1="18" y1="7" x2="18" y2="29" stroke="#C8F135" stroke-width="1.5"/>
-    <line x1="7" y1="18" x2="29" y2="18" stroke="#C8F135" stroke-width="1.5"/>
-    <line x1="10.5" y1="10.5" x2="25.5" y2="25.5" stroke="#C8F135" stroke-width="1"/>
-    <line x1="25.5" y1="10.5" x2="10.5" y2="25.5" stroke="#C8F135" stroke-width="1"/>
-    <circle cx="18" cy="18" r="3" fill="#C8F135"/>
-  </svg>
-  <div class="logo">Grupo Limoeiro</div>
+  <img src="https://static.wixstatic.com/media/adbb06_14f3bbe5fae7475ea93b185b79740c92~mv2.png/v1/fill/w_430,h_80,al_c,q_95,enc_avif,quality_auto/06.png" alt="Grupo Limoeiro" class="logoimg">
   <div class="ctitle">Campanha Jun/2026</div>
 </div>
 <div class="strip">🍋 Somos conhecidos por fazer do limão, uma limonada!</div>
@@ -142,57 +132,13 @@ DC[0]=DC[1]=DC[2]=DC[3]=true;
 const S=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
 const gd=i=>S[(1+i)%7];
 const cnt=()=>C.filter(Boolean).length;
-function rg(){
-  const g=document.getElementById('grid');g.innerHTML='';
-  for(let i=0;i<15;i++){
-    const e=document.createElement('div');e.className='dot'+(C[i]?' on':'');e.textContent=C[i]?'✓':(i+1);
-    if(N[i]){const t=document.createElement('div');t.className='tip';t.textContent=N[i];e.appendChild(t);}
-    e.onclick=()=>{C[i]=!C[i];ra();};g.appendChild(e);
-  }
-}
-function rp(){
-  const c=cnt();
-  document.getElementById('cnt').innerHTML=c+' <span>/ 15</span>';
-  document.getElementById('bar').style.width=(c/15*100)+'%';
-  document.getElementById('rem').textContent=15-c;
-  document.getElementById('rf').textContent=15-c;
-}
-function rm(){
-  const m=M[d];
-  document.getElementById('tag').textContent=String(d+1).padStart(2,'0')+'/jun · '+gd(d)+' · Dia '+(d+1)+' de 30';
-  document.getElementById('emo').textContent=m.e;
-  document.getElementById('msg').textContent=m.t;
-  document.getElementById('bp').disabled=d===0;
-  document.getElementById('bn').disabled=d===29;
-}
-function rb(){
-  const b=document.getElementById('cb');
-  if(DC[d]){b.textContent='✓ Cliente marcado neste dia!';b.classList.add('on');}
-  else{b.textContent='+ Marcar cliente fechado hoje';b.classList.remove('on');}
-}
-function tc(){
-  if(!DC[d]){
-    const s=C.indexOf(false);
-    if(s===-1){alert('Todos os 15 clientes marcados! 🏆🍋');return;}
-    C[s]=true;DC[d]=true;
-  }else{
-    DC[d]=false;
-    const x=C.map((v,i)=>v&&i>=4?i:-1).filter(x=>x>=0);
-    if(x.length>0)C[x[x.length-1]]=false;
-    else{const r=C.map((v,i)=>v&&![0,1,2,3].includes(i)?i:-1).filter(x=>x>=0);if(r.length>0)C[r[r.length-1]]=false;}
-  }
-  ra();
-}
+function rg(){const g=document.getElementById('grid');g.innerHTML='';for(let i=0;i<15;i++){const e=document.createElement('div');e.className='dot'+(C[i]?' on':'');e.textContent=C[i]?'✓':(i+1);if(N[i]){const t=document.createElement('div');t.className='tip';t.textContent=N[i];e.appendChild(t);}e.onclick=()=>{C[i]=!C[i];ra();};g.appendChild(e);}}
+function rp(){const c=cnt();document.getElementById('cnt').innerHTML=c+' <span>/ 15</span>';document.getElementById('bar').style.width=(c/15*100)+'%';document.getElementById('rem').textContent=15-c;document.getElementById('rf').textContent=15-c;}
+function rm(){const m=M[d];document.getElementById('tag').textContent=String(d+1).padStart(2,'0')+'/jun · '+gd(d)+' · Dia '+(d+1)+' de 30';document.getElementById('emo').textContent=m.e;document.getElementById('msg').textContent=m.t;document.getElementById('bp').disabled=d===0;document.getElementById('bn').disabled=d===29;}
+function rb(){const b=document.getElementById('cb');if(DC[d]){b.textContent='✓ Cliente marcado neste dia!';b.classList.add('on');}else{b.textContent='+ Marcar cliente fechado hoje';b.classList.remove('on');}}
+function tc(){if(!DC[d]){const s=C.indexOf(false);if(s===-1){alert('Todos os 15 clientes marcados! 🏆🍋');return;}C[s]=true;DC[d]=true;}else{DC[d]=false;const x=C.map((v,i)=>v&&i>=4?i:-1).filter(x=>x>=0);if(x.length>0)C[x[x.length-1]]=false;else{const r=C.map((v,i)=>v&&![0,1,2,3].includes(i)?i:-1).filter(x=>x>=0);if(r.length>0)C[r[r.length-1]]=false;}}ra();}
 function cd(v){d=Math.max(0,Math.min(29,d+v));ra();}
-function rl(){
-  const inn=document.getElementById('cl');
-  const named=N.map((n,i)=>({n,i})).filter(x=>C[x.i]&&x.n);
-  const unn=C.map((v,i)=>v&&!N[i]?i:-1).filter(x=>x>=0);
-  let h='',n=1;
-  named.forEach(x=>{h+='<div class="ci"><div class="cn">'+n+++'</div><span>'+x.n+'</span></div>';});
-  unn.forEach(()=>{h+='<div class="ci"><div class="cn">'+n+++'</div><span style="color:var(--muted)">Cliente fechado</span></div>';});
-  inn.innerHTML=h||'<div class="nc">Nenhum cliente registrado ainda.</div>';
-}
+function rl(){const inn=document.getElementById('cl');const named=N.map((n,i)=>({n,i})).filter(x=>C[x.i]&&x.n);const unn=C.map((v,i)=>v&&!N[i]?i:-1).filter(x=>x>=0);let h='',n=1;named.forEach(x=>{h+='<div class="ci"><div class="cn">'+n+++'</div><span>'+x.n+'</span></div>';});unn.forEach(()=>{h+='<div class="ci"><div class="cn">'+n+++'</div><span style="color:var(--muted)">Cliente fechado</span></div>';});inn.innerHTML=h||'<div class="nc">Nenhum cliente registrado ainda.</div>';}
 function ra(){rg();rp();rm();rb();rl();}
 ra();
 </script>
