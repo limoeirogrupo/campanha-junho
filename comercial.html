@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo Limoeiro - Campanha Junho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--lime:#D7F40B;--black:#000;--card:#141414;--border:#222;--text:#091405;--white:#F6F9F5;--muted:#555}
+body{background:var(--black);font-family:'Montserrat',sans-serif;color:var(--white);overflow-x:hidden}
+.topbar{background:var(--black);border-bottom:3px solid var(--lime);padding:16px 28px;display:flex;align-items:center;justify-content:space-between}
+.logoimg{height:40px;width:auto}
+.topbar-tag{font-size:.62rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}
+.strip{background:var(--lime);padding:11px 24px;text-align:center;font-size:.78rem;font-weight:800;font-style:italic;letter-spacing:2px;text-transform:uppercase;color:var(--text)}
+.hero{padding:56px 28px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(215,244,11,.06) 0%,transparent 70%);pointer-events:none}
+.tag{display:inline-block;border:1px solid rgba(215,244,11,.35);background:rgba(215,244,11,.08);color:var(--lime);font-size:.62rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;padding:6px 18px;border-radius:99px;margin-bottom:32px}
+.hl{font-size:clamp(3rem,11vw,6.5rem);font-weight:900;line-height:.9;text-transform:uppercase;margin-bottom:24px}
+.hl .lime{color:var(--lime)}.hl .it{font-style:italic}.hl .bl{display:block}
+.sub{font-size:clamp(.9rem,2.5vw,1.1rem);color:#999;max-width:480px;margin:0 auto 48px;line-height:1.65}
+.sub strong{color:var(--white);font-weight:700}
+.pw{display:inline-flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.pn{font-size:clamp(5rem,18vw,9rem);font-weight:900;line-height:1;color:var(--lime)}
+.ps{font-size:clamp(2.5rem,8vw,5rem);font-weight:300;color:#333}
+.pt{font-size:clamp(2rem,7vw,4rem);font-weight:700;color:#444}
+.pl{font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:40px}
+.bar-o{width:100%;max-width:480px;margin:0 auto 52px}
+.bar-bg{background:#1a1a1a;border-radius:99px;height:10px;overflow:hidden;margin-bottom:8px}
+.bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--lime),#a8e000);width:0%;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+.bar-meta{display:flex;justify-content:space-between;font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444}
+.mc{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--lime);border-radius:12px;padding:28px;max-width:540px;width:100%;margin:0 auto;text-align:left}
+.md{font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+.me{font-size:2rem;display:block;margin-bottom:10px}
+.mt{font-size:1rem;line-height:1.7;color:#bbb}
+.cs{padding:56px 28px 48px;max-width:640px;margin:0 auto}
+.sl{font-size:.62rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;text-align:center}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:11px 14px;display:flex;align-items:center;gap:10px;font-size:.82rem;font-weight:500}
+.cn{width:24px;height:24px;border-radius:5px;background:var(--lime);color:var(--text);font-size:.7rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ctas{text-align:center;padding:0 28px 80px}
+.ctah{font-size:clamp(2rem,7vw,3.5rem);font-weight:900;font-style:italic;text-transform:uppercase;line-height:1;margin-bottom:12px}
+.ctah .lime{color:var(--lime)}
+.ctas-sub{font-size:.92rem;color:#777;margin-bottom:32px}
+.ctab{display:inline-block;background:var(--lime);color:var(--text);font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;padding:17px 44px;border-radius:6px;text-decoration:none;transition:all .2s}
+.ctab:hover{opacity:.88;transform:translateY(-2px)}
+footer{border-top:1px solid var(--border);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.fl{height:24px;width:auto;opacity:.4}
+.ft{font-size:.6rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#444}
+</style>
+</head>
+<body>
+<div class="topbar">
+<img class="logoimg" src="https://static.wixstatic.com/media/adbb06_14f3bbe5fae7475ea93b185b79740c92~mv2.png/v1/fill/w_430,h_80,al_c,q_95,enc_avif,quality_auto/06.png" alt="Grupo Limoeiro">
+<span class="topbar-tag">Campanha Jun/2026</span>
+</div>
+<div class="strip">Somos conhecidos por fazer do limao, uma limonada!</div>
+<section class="hero">
+<div class="tag">Campanha Comercial - Junho 2026</div>
+<h1 class="hl"><span class="bl">Vamos fazer</span><span class="bl lime it">do limao,</span><span class="bl">uma limonada!</span></h1>
+<p class="sub">A meta e fechar <strong>15 clientes</strong> em junho.<br>O time ja esta no caminho e cada fechamento conta.</p>
+<div class="pw"><div class="pn">7</div><div class="ps">/</div><div class="pt">15</div></div>
+<div class="pl">clientes fechados - 12/jun/2026 - 46,7% da meta</div>
+<div class="bar-o"><div class="bar-bg"><div class="bar-fill" id="bf"></div></div><div class="bar-meta"><span>0</span><span id="pct">0%</span><span>15</span></div></div>
+<div class="mc"><div class="md">12/jun - Sex - Mensagem do dia</div><span class="me">&#127919;</span><div class="mt">7 de 15 - quase metade da meta em 12 dias, isso e ritmo real! Hoje e sexta e o fim de semana nao e pausa - e vantagem. Aquela mensagem enviada agora pode virar o fechamento de segunda.</div></div>
+</section>
+<section class="cs"><div class="sl">Clientes fechados ate agora</div><div class="cg" id="grid"></div></section>
+<section class="ctas"><div class="ctah">Faltam apenas <span class="lime">8!</span></div><div class="ctas-sub">Voce pode ser o proximo fechamento do mes.</div><a href="https://limoeirogrupo.github.io/campanha-junho/" class="ctab">Ver painel completo</a></section>
+<footer><img class="fl" src="https://static.wixstatic.com/media/adbb06_14f3bbe5fae7475ea93b185b79740c92~mv2.png/v1/fill/w_430,h_80,al_c,q_95,enc_avif,quality_auto/06.png" alt="Grupo Limoeiro"><span class="ft">Grupo Limoeiro - Campanha Junho 2026</span></footer>
+<script>
+const CL=["Maria Fit","Hidrodomi","Tia Zuma","Mariett Calcados","TechMalhas","Finco Tecnologia","Fernando Becker"];
+const g=document.getElementById("grid");
+CL.forEach((n,i)=>{const d=document.createElement("div");d.className="cc";d.innerHTML='<div class="cn">'+(i+1)+'</div><span>'+n+'</span>';g.appendChild(d);});
+setTimeout(()=>{document.getElementById("bf").style.width="46.7%";document.getElementById("pct").textContent="47%";},400);
+</script>
+</body>
+</html>
